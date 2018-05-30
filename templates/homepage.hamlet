@@ -13,6 +13,8 @@
                 <div .page-header>
                      <p>
                        <a href=@{DeadlineNewR}>Add a deadline
+                       &nbsp;&nbsp;&nbsp;
+                       <a href=@{EventNewR}>Add an event
 
                     <h1 #deadlines>Upcoming Deadlines
 

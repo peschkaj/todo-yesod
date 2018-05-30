@@ -15,4 +15,4 @@ data YDeadline = YDeadline { title        :: T.Text
 
 toDeadline :: YDeadline -> Deadline
 toDeadline (YDeadline t d dd dt) = Deadline t d (toLocalTime dd dt)
-  where toLocalTime day time = LocalTime day time
+  where toLocalTime              = LocalTime

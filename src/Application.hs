@@ -42,6 +42,7 @@ import Handler.Common
 import Handler.Home
 import Handler.Comment
 import Handler.DeadlineNew
+import Handler.EventNew
 
 import Deadline
 

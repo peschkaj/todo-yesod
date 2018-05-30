@@ -11,3 +11,5 @@
 /comments CommentR POST
 /deadline/new DeadlineNewR GET POST
 /deadline DeadlineR GET
+
+/events/new EventNewR GET POST
