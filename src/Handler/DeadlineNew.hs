@@ -17,6 +17,13 @@ deadlineForm = renderDivs $ YDeadline
   <*> areq dayField  "Due Date" Nothing
   <*> areq timeField "Deadline Time" Nothing
 
+getDeadlineR :: Handler Html
+getDeadlineR = do
+  deadlines <- liftIO getCurrentDeadlines
+  defaultLayout $ do
+    setTitle "All Deadlines"
+    $(widgetFile "deadline/deadlines")
+
 getDeadlineNewR :: Handler Html
 getDeadlineNewR = do
   (formWidget, enctype) <- generateFormPost $ deadlineForm

@@ -8,6 +8,8 @@ module Handler.Home where
 import Import
 import Yesod.Form.Bootstrap3 (BootstrapFormLayout (..), renderBootstrap3)
 import Text.Julius (RawJS (..))
+import Deadline
+import Events
 
 -- Define our data that will be used for creating the form.
 data FileForm = FileForm
@@ -27,6 +29,8 @@ getHomeR = do
     (formWidget, formEnctype) <- generateFormPost sampleForm
     let submission = Nothing :: Maybe FileForm
         handlerName = "getHomeR" :: Text
+    ds <- liftIO (getCurrentDeadlines >>= upcomingDeadlines)
+    es <- liftIO getCurrentEvents
     defaultLayout $ do
         let (commentFormId, commentTextareaId, commentListId) = commentIds
         aDomId <- newIdent
@@ -40,7 +44,8 @@ postHomeR = do
         submission = case result of
             FormSuccess res -> Just res
             _ -> Nothing
-
+    ds <- liftIO (getCurrentDeadlines >>= upcomingDeadlines)
+    es <- liftIO getCurrentEvents
     defaultLayout $ do
         let (commentFormId, commentTextareaId, commentListId) = commentIds
         aDomId <- newIdent
