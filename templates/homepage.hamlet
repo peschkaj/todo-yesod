@@ -37,5 +37,5 @@
                         <li .list-group-item>
                           <h2>#{name}
                           <div>Starting <strong>#{show startTime}</strong><br />
-                            Ending <strong>#{show endTime}
+                            Ending <strong>#{show endTime}</strong>
                           <div>#{detail}

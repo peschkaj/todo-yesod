@@ -14,5 +14,6 @@ data YDeadline = YDeadline { title        :: T.Text
                            }
 
 toDeadline :: YDeadline -> Deadline
-toDeadline (YDeadline t d dd dt) = Deadline t d (toLocalTime dd dt)
-  where toLocalTime              = LocalTime
+toDeadline (YDeadline t d dd dt) = Deadline t d (toUTCTime dd dt)
+  where tz                       = unsafePerformIO getCurrentTimeZone
+        toUTCTime dd' dt'        = localTimeToUTC tz (LocalTime dd' dt')

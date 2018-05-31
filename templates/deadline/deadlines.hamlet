@@ -1,9 +1,12 @@
 <h1>Deadlines
-$if null deadlines
+<p>
+  <a href=@{DeadlineNewR}>Add a deadline
+$if null ds
   <div><strong>No deadlines to display
 $else
-  $forall Deadline title description dueDate <- deadlines
-    <div>
-      <h2>#{title}
-      <div>Due on <strong>#{show dueDate}</strong>
-      <div>#{description}
+   <ul .list-group>
+   $forall Deadline title description dueDate <- ds
+     <li .list-group-item>
+       <h2>#{title}
+       <div>Due on <strong>#{show dueDate}</strong>
+       <div>#{description}
