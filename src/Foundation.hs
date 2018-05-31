@@ -105,12 +105,12 @@ instance Yesod App where
                   { menuItemLabel = "Deadlines"
                   , menuItemRoute = DeadlineR
                   , menuItemAccessCallback = True
-                  } --,
-                  -- NavbarLeft $ MenuItem
-                  -- { menuItemLabel = "Events"
-                  -- , menuItemRoute = EventR
-                  -- , menuItemAccessCallback = True
-                  -- }
+                  } ,
+                  NavbarLeft $ MenuItem
+                  { menuItemLabel = "Events"
+                  , menuItemRoute = EventR
+                  , menuItemAccessCallback = True
+                  }
                 ]
 
         let navbarLeftMenuItems = [x | NavbarLeft x <- menuItems]

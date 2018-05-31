@@ -13,3 +13,4 @@
 /deadline DeadlineR GET
 
 /events/new EventNewR GET POST
+/events EventR GET

@@ -18,6 +18,12 @@ eventForm = renderDivs $ YEvent
   <*> areq dayField  "End Day" Nothing
   <*> areq timeField "End Time" Nothing
 
+getEventR :: Handler Html
+getEventR = do
+  es <- liftIO getCurrentEvents
+  defaultLayout $ do
+    setTitle "All Events"
+    $(widgetFile "events/events")
 
 getEventNewR :: Handler Html
 getEventNewR = do

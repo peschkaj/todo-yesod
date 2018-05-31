@@ -2,7 +2,8 @@
 <p>
   <a href=@{DeadlineNewR}>Add a deadline
 $if null ds
-  <div><strong>No deadlines to display
+  <div>
+    <strong>No deadlines to display
 $else
    <ul .list-group>
    $forall Deadline title description dueDate <- ds
