@@ -32,5 +32,5 @@ postHomeR = do
     today <- liftIO getCurrentTime
     defaultLayout $ do
         aDomId <- newIdent
-        setTitle "Welcome To Yesod!"
+        setTitle "Get stuff done!"
         $(widgetFile "homepage")

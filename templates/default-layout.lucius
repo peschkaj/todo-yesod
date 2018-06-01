@@ -71,3 +71,6 @@
 #message {
     margin-bottom: 40px;
 }
+
+label { display: block; }
+button, label { margin-top: 10px; }

@@ -26,11 +26,7 @@ getEventR = do
     $(widgetFile "events/events")
 
 getEventNewR :: Handler Html
-getEventNewR = do
-  (formWidget, enctype) <- generateFormPost $ eventForm
-  defaultLayout $ do
-    setTitle "New Event"
-    $(widgetFile "events/new")
+getEventNewR = postEventNewR
 
 postEventNewR :: Handler Html
 postEventNewR = do

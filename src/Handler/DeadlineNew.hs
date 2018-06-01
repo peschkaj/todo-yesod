@@ -26,11 +26,7 @@ getDeadlineR = do
     $(widgetFile "deadline/deadlines")
 
 getDeadlineNewR :: Handler Html
-getDeadlineNewR = do
-  (formWidget, enctype) <- generateFormPost $ deadlineForm
-  defaultLayout $ do
-    setTitle "New Deadline"
-    $(widgetFile "deadline/new")
+getDeadlineNewR = postDeadlineNewR
 
 postDeadlineNewR :: Handler Html
 postDeadlineNewR = do
