@@ -6,6 +6,8 @@ todo-hs.cabal
 vendor/
 devel-terminate
 todo-yesod.cabal
+yesod-devel/rebuild
+static/tmp/**
 
 # Created by https://www.gitignore.io/api/haskell
 
