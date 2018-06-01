@@ -20,6 +20,7 @@ deadlineForm = renderDivs $ YDeadline
 getDeadlineR :: Handler Html
 getDeadlineR = do
   ds <- liftIO getCurrentDeadlines
+  today <- liftIO getCurrentTime
   defaultLayout $ do
     setTitle "All Deadlines"
     $(widgetFile "deadline/deadlines")

@@ -8,6 +8,9 @@ $else
    <ul .list-group>
    $forall Deadline title description dueDate <- ds
      <li .list-group-item>
-       <h2>#{title}
+       <h2>#{title}  #
+           $if dueDate < today
+             <span style="color:red">Overdue</span>
+
        <div>Due on <strong>#{show dueDate}</strong>
        <div>#{description}
