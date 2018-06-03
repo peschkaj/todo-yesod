@@ -1,4 +1,4 @@
-# Building and Testing
+# Building the Application
 
 1. [install Stack](https://haskell-lang.org/get-started)
     * On POSIX systems, this is usually `curl -sSL https://get.haskellstack.org/ | sh`
