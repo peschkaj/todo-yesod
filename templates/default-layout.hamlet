@@ -21,6 +21,10 @@
 
 <!-- Page Contents -->
 
+<div .container>
+  $maybe msg <- mmsg
+    <div .alert.alert-info #message>#{msg}
+
 $if (Just HomeR == mcurrentRoute)
     ^{widget}
 $else

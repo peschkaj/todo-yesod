@@ -34,8 +34,10 @@ postEventNewR = do
   case res of
     FormSuccess entry -> do
       c <- liftIO getCurrentEvents
-      _ <- liftIO (addEvent (toEvent entry) c)
-      setMessage "Successfully added event"
+      es <- liftIO (addEvent (toEvent entry) c)
+      case es of (e:_) | (toEvent entry) == e -> setMessage "Successfully added event"
+                       | otherwise            -> setMessage "Unable to add event"
+                 _                            -> setMessage "Something unexpected and terrible happened"
       redirect $ HomeR
     _ -> defaultLayout $ do
       setTitle "New Event"
