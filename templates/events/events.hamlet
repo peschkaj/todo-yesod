@@ -1,0 +1,15 @@
+<h1>Events
+<p>
+  <a href=@{EventNewR}>Add an event
+$if null es
+  <div>
+    <strong>No events to display. Maybe you should \
+      <a href=@{EventNewR}>add an event</a>?
+$else
+  <ul .list-group>
+  $forall Event name detail startTime endTime <- es
+    <li .list-group-item>
+      <h2>#{name}
+      <div>Starting <strong>#{show startTime}</strong><br />
+        Ending <strong>#{show endTime}</strong>
+      <div>#{detail}
